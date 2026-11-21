@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Générateur TikTok · Instagram</title>
+<body style="font:16px -apple-system,sans-serif;padding:40px">
+<p id="msg">Retour vers l'application…</p>
+<script>
+  // Page relais : Instagram exige une adresse HTTPS ; on renvoie la réponse (code, state ou erreur)
+  // vers le petit serveur local de l'app, qui seul peut l'échanger contre un jeton.
+  var q = location.search;
+  if (q) location.replace('http://127.0.0.1:53684/callback' + q);
+  else document.getElementById('msg').textContent = "Rien à faire ici : lance la connexion depuis l'application.";
+</script>
+</body>
+</html>
